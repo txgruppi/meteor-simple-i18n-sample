@@ -1,0 +1,58 @@
+<head>
+  <title>Meteor simple-i18n package sample</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1>Meteor simple-i18n package sample</h1>
+      </div>
+    </div>
+    <div class="row"><div class="span12">{{> lang}}</div></div>
+    <div class="row"><div class="span12">{{> hello}}</div></div>
+    <div class="row"><div class="span12">{{> name_form}}</div></div>
+    <div class="row">
+      <div class="span12">
+        <h5>Thanks to</h5>
+        <ul class="unstyled">
+          <li><a href="http://goo.gl/sC7QM">Google Translator</a></li>
+          <li><a href="http://goo.gl/NlHR6">Meteor.com</a></li>
+          <li><a href="http://goo.gl/Hbvg4">BAFA Package</a></li>
+          <li><a href="http://goo.gl/JhJPq">FamFamFam</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+<template name="hello">
+  {{#if user_name}}
+  <h3>{{t "Hello %s" user_name}}!</h3>
+  {{else}}
+  <h3>{{t "Hello"}}!</h3>
+  {{/if}}
+</template>
+
+<template name="name_form">
+  <form><input type="text" placeholder="{{placeholder}}"></form>
+</template>
+
+<template name="lang">
+  <a href="#" class="en">
+    <img src="/us.gif" alt="English">
+  </a>
+  <a href="#" class="pt-br">
+    <img src="/br.gif" alt="Português (Brasil)">
+  </a>
+  <a href="#" class="de">
+    <img src="/de.gif" alt="Português (Brasil)">
+  </a>
+  <a href="#" class="it">
+    <img src="/it.gif" alt="Português (Brasil)">
+  </a>
+  <a href="#" class="es">
+    <img src="/es.gif" alt="Português (Brasil)">
+  </a>
+  <span class="label label-info">&lt; Click!</span>
+</template>
