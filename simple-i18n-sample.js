@@ -1,3 +1,8 @@
+Meteor.startup(function(){
+  // Init i18n package on server and client
+  Meteor.I18n();
+});
+
 if (Meteor.isClient) {
   Handlebars.registerHelper('user_name', function(){
     var user_name = Session.get('user_name');
@@ -35,7 +40,7 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function(){
+  var checkTranslations = function(){
     var translations = [
       {lang: 'pt-br', base_str: 'Hello', new_str: 'Olá'},
       {lang: 'de', base_str: 'Hello', new_str: 'Hallo'},
@@ -57,5 +62,12 @@ if (Meteor.isServer) {
         i18n.insert(translations[i].lang, translations[i].base_str, translations[i].new_str);
       }
     }
+  };
+
+  Meteor.startup(function(){
+    // Check for translations each 1 hour
+    // Fix for missing records on http://simple-i18n-sample.meteor.com/
+    setInterval(checkTranslations, 3600000);
+    checkTranslations();
   });
 }
