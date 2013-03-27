@@ -1,3 +1,4 @@
 .DS_Store
-.meteor
+.meteor/local
+.meteor/meteorite
 smart.lock
