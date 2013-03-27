@@ -1,10 +1,9 @@
 {
   "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
+    "tag": "v0.5.9"
   },
   "packages": {
-    "simple-i18n": "",
-    "bafa": ""
+    "simple-i18n": "0.1.6",
+    "bafa": "0.3.0"
   }
 }
