@@ -21,7 +21,7 @@ if (Meteor.isClient) {
   Template.name_form.events({
     'keyup input': function(e){
       var input = e.target;
-      var value = _.str.trim(input.value);
+      var value = input.value;
 
       if (value.length)
         Session.set('user_name', value);
