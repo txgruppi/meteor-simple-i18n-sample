@@ -4,7 +4,7 @@ Meteor.startup(function(){
 });
 
 if (Meteor.isClient) {
-  Handlebars.registerHelper('user_name', function(){
+  UI.registerHelper('user_name', function(){
     var user_name = Session.get('user_name');
     return user_name ? user_name : '';
   });
